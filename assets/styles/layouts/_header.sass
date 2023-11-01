@@ -15,21 +15,26 @@
   display: flex
   justify-content: space-between
   align-items: center
-  &__brand
-    font-family: $font-family-logo
-    color: $color-primary-title
-    margin-top: 0
-    font-weight: 500
-    font-size: 2.5rem
-    position: relative
-    &::after
-      content: ''
+  &__toggle
+    transform: translate(0px,20px)
+    &__line
+      width: 30px
+      height: 3px
+      background-color: $color-primary
+      border-radius: 100px
       display: block
-      position: absolute
-      width: 100%
-      bottom: 10px
-      border-bottom: solid 5px $color-primary-title
+      margin-top: 7px
+      transition: all .5s
+    &.active
+      .nav__toggle__line:nth-child(1)
+        transform: translateY(10px) rotate(135deg)
+      .nav__toggle__line:nth-child(2)
+        opacity: 0
+        transform: translateX(30px)
+      .nav__toggle__line:nth-child(3)
+        transform: translateY(-10px) rotate(-135deg)
   &__menu
+    display: none
     +md 
       position: absolute
       top: 67px
@@ -42,13 +47,6 @@
       &.active
         right: 15px
         
-  &__list
-    display: flex
-    list-style: none
-    +md 
-      flex-wrap: wrap
-      flex-direction: column
-      padding: 10px
       
   &__link
     padding: 4px 16px 
@@ -91,25 +89,6 @@
       padding: 8px 12px
       text-align: center
 
-  &__toggle
-    display: none
-    +md 
-      display: block
-    &__line
-      width: 30px
-      height: 3px
-      background-color: $color-primary
-      border-radius: 100px
-      display: block
-      margin-top: 7px
-      transition: all .5s
-    &.active
-      .nav__toggle__line:nth-child(1)
-        transform: translateY(10px) rotate(135deg)
-      .nav__toggle__line:nth-child(2)
-        opacity: 0
-        transform: translateX(30px)
-      .nav__toggle__line:nth-child(3)
-        transform: translateY(-10px) rotate(-135deg)
+  
 
 

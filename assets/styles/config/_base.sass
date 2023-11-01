@@ -6,23 +6,25 @@ body, html
 	font-weight: $font-weight-normal
 	font-size: 16px
 	color: $color-primary
+	background-color: $color-bgc
 	line-height: 1.7
 	position: relative
 	+sm 
 		font-size: 14px
-	::selection 
-		// background-color: $color-selection
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6
 	font-weight: $font-weight-bold
 	color: $color-primary-title
 .h1, h1, .h2, h2, .h3, h3
+	text-align: center
 	// margin-top: 1.75rem
 
 .h1, h1
 	font-size: $font-size-base * 2.25
 .h2, h2
 	font-size: $font-size-base * 1.75
+	margin-top: 2rem
+
 .h3, h3
 	font-size: $font-size-base * 1.5
 .h4, h4
@@ -32,7 +34,6 @@ p
 	font-size: $font-size-base
 	font-weight: $font-weight-normal
 	color: $color-primary
-	margin-top: .75rem
 
 a
 	font-size: $font-size-base
@@ -43,10 +44,15 @@ a
 span 
 	color: $color-primary
 
-ul, ol 
-	padding-left: 0
+ol
+	padding-left: 18px
+ul
+	padding-left: 22px
 ul 
 	list-style: disc
+	&.none
+		list-style: none
+		padding-left: 0
 ol 
 	list-style: decimal
 li 
@@ -78,7 +84,13 @@ button
 	+md
 		padding: 0 15px
 
+.logo
+	width: 400px
+	max-width: 100%
+	margin: 60px auto 0
+
 .section
+	margin-top: 2rem
 	
 		
 

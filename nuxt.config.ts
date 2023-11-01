@@ -20,8 +20,10 @@ export default defineNuxtConfig({
       ],
     }
   },
+
   css: [
     '@/assets/styles/main.sass',
   ],
-  devtools: { enabled: true }
+
+  devtools: { enabled: true },
 })
