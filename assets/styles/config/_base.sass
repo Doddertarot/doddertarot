@@ -1,0 +1,84 @@
+*,*::before,*::after 
+	box-sizing: border-box
+
+body, html
+	font-family: $font-family-default
+	font-weight: $font-weight-normal
+	font-size: 16px
+	color: $color-primary
+	line-height: 1.7
+	position: relative
+	+sm 
+		font-size: 14px
+	::selection 
+		// background-color: $color-selection
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6
+	font-weight: $font-weight-bold
+	color: $color-primary-title
+.h1, h1, .h2, h2, .h3, h3
+	// margin-top: 1.75rem
+
+.h1, h1
+	font-size: $font-size-base * 2.25
+.h2, h2
+	font-size: $font-size-base * 1.75
+.h3, h3
+	font-size: $font-size-base * 1.5
+.h4, h4
+	font-size: $font-size-base * 1.25
+
+p 
+	font-size: $font-size-base
+	font-weight: $font-weight-normal
+	color: $color-primary
+	margin-top: .75rem
+
+a
+	font-size: $font-size-base
+	font-weight: $font-weight-normal
+	color: $color-primary
+	text-decoration: none
+	cursor: pointer
+span 
+	color: $color-primary
+
+ul, ol 
+	padding-left: 0
+ul 
+	list-style: disc
+ol 
+	list-style: decimal
+li 
+	color: $color-primary
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+img
+	max-width: 100%
+	height: auto
+
+hr 
+	margin-top: 3rem
+	margin-bottom: 3rem
+	border: dashed 1px lighten($color-primary, 10%)
+
+button 
+	background: none 
+	border: none
+
+.container 
+	max-width: 980px
+	margin: 0 auto
+	width: 100%
+	+xl 
+		padding: 0 20px
+	+md
+		padding: 0 15px
+
+.section
+	
+		
+

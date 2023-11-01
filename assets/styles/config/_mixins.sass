@@ -1,0 +1,73 @@
+
+// ----- media -----
+@mixin xxl 
+  @media (max-width: #{$xxl}) // 1400px
+    @content
+@mixin xl
+  @media (max-width: #{$xl}) // 1199px
+    @content
+@mixin lg
+  @media (max-width: #{$lg}) // 991px
+    @content
+@mixin md
+  @media (max-width: #{$md}) // 767px
+    @content
+@mixin sm
+  @media(max-width: #{$sm})  // 575px
+    @content
+@mixin xs
+  @media(max-width: #{$xs}) // 420px
+    @content
+
+// ----- clearfix -----
+@mixin clearfix()
+  &::after 
+    display: block
+    clear: both
+    content: ""
+
+// ----- 上下左右置中 (FLEX) -----
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+// ----- 上下左右置中 (absolute) -----
+@mixin abCenter
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+
+// ----- 文字 -----
+@mixin textSet($fz,$fw,$color)
+  font-size: $fz
+  font-weight: $fw
+  color: $color
+
+// ----- 漸層 -----
+@mixin gradientLeftToRight($color_1,$color_2,$color_3)
+  background: $color_2
+  background: -moz-linear-gradient(left, $color_1, $color_2, $color_3)
+  background: -webkit-linear-gradient(left, $color_1,$color_2,$color_3)
+  background: linear-gradient(to right, $color_1,$color_2,$color_3)
+
+@mixin gradientTopToBottom($color_1,$color_2,$color_3)
+  background: $color_2
+  background: -moz-linear-gradient(top, $color_1, $color_2, $color_3)
+  background: -webkit-linear-gradient(top, $color_1,$color_2,$color_3)
+  background: linear-gradient(to bottom, $color_1,$color_2,$color_3)
+
+
+// ----- 隱藏文字 -----
+@mixin hide-text 
+  text-indent: 110%
+  white-space: nowrap
+  overflow: hidden
+
+// ----- toRem -----
+$font-size-16: 16px
+@function toRem($px)
+  @return ($px / $font-size-16) * 1rem
+
+
