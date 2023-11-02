@@ -1,13 +1,22 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import CardModal from "@/components/CardModal.vue";
+
 const cardData = ref([]);
 const { data: card } = await useFetch("/api/card");
 cardData.value = card.value.data;
 // console.log(cardData.value);
 
-const testfunc = () => {
+// Modal
+const isModalOpen = ref(false);
+const closeModalHandle = () => {
+	isModalOpen.value = false;
+};
+
+const func = () => {
 	const randomInt = Math.floor(Math.random() * 156) + 1;
 	console.log(randomInt);
+	isModalOpen.value = true;
 };
 </script>
 
@@ -15,19 +24,13 @@ const testfunc = () => {
 	<div class="index">
 		<div class="container">
 			<h1>菟絲子塔羅占卜</h1>
-			<!-- <div v-for="(item, index) in cardData" :key="index">
-				{{ item.name }}
-				<img :src="item.path" alt="" />
-			</div> -->
 			<div class="drawcard">
 				<h2 class="drawcard__title">
 					集中精神，冥想問題<br />
 					準備好之後<br />
 					按下抽牌鍵<span>↓</span>
 				</h2>
-				<button type="button" class="drawcard__btn" @click="testfunc">
-					抽牌
-				</button>
+				<button type="button" class="drawcard__btn" @click="func">抽牌</button>
 			</div>
 			<div class="index__bottom">
 				<section class="section">
@@ -43,10 +46,14 @@ const testfunc = () => {
 					</p>
 				</section>
 				<div class="index__bottom__logo">
-					<img src="/img/index_bg.jpg" alt="" />
+					<img src="/img/index_bg.jpg" alt="菟絲子塔羅占卜" />
 				</div>
 			</div>
 		</div>
+		<CardModal
+			:isModalOpen="isModalOpen"
+			:closeModalHandle="closeModalHandle"
+		/>
 	</div>
 </template>
 
