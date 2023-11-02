@@ -1,8 +1,14 @@
 <script setup>
 import { ref, onMounted } from "vue";
-// const cardData = ref([]);
-// const { data: card } = await useFetch("/api/card");
-// cardData.value = card.value.data;
+const cardData = ref([]);
+const { data: card } = await useFetch("/api/card");
+cardData.value = card.value.data;
+// console.log(cardData.value);
+
+const testfunc = () => {
+	const randomInt = Math.floor(Math.random() * 156) + 1;
+	console.log(randomInt);
+};
 </script>
 
 <template>
@@ -19,7 +25,9 @@ import { ref, onMounted } from "vue";
 					準備好之後<br />
 					按下抽牌鍵<span>↓</span>
 				</h2>
-				<button type="button" class="drawcard__btn">抽牌</button>
+				<button type="button" class="drawcard__btn" @click="testfunc">
+					抽牌
+				</button>
 			</div>
 			<section class="section">
 				<p>抽牌前：</p>
