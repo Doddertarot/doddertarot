@@ -1,94 +1,59 @@
-.header 
-  // position: fixed
-  // top: 0
-  // left: 0
-  // z-index: 100
-  // width: 100%
-  // padding: 8px 0
-  // -webkit-backdrop-filter: blur(10px)
-  // backdrop-filter: blur(10px)
-  // box-shadow: 0 0px 15px 5px rgba(0, 0, 0, 0.05)
-  // +md 
-  //   padding: 0
 
 .nav
-  display: flex
-  justify-content: space-between
-  align-items: center
-  &__toggle
-    transform: translate(0px,20px)
-    &__line
-      width: 30px
-      height: 3px
-      background-color: $color-primary
-      border-radius: 100px
-      display: block
-      margin-top: 7px
-      transition: all .5s
-    &.active
-      .nav__toggle__line:nth-child(1)
-        transform: translateY(10px) rotate(135deg)
-      .nav__toggle__line:nth-child(2)
-        opacity: 0
-        transform: translateX(30px)
-      .nav__toggle__line:nth-child(3)
-        transform: translateY(-10px) rotate(-135deg)
-  &__menu
-    display: none
-    +md 
-      position: absolute
-      top: 67px
-      width: 180px
-      background-color: lighten($color-bgc, 10%)
-      border: solid 2px $color-primary
-      border-radius: 12px
-      right: -100%
-      transition: right .75s
-      &.active
-        right: 15px
-        
-      
-  &__link
-    padding: 4px 16px 
-    margin-left: 12px
-    display: block
-    transition: color .5s
-    overflow: hidden 
-    position: relative
-    +md 
-      margin-left: 0
-      padding: 8px 12px
-      text-align: center
-      
-    &::after
-      content: ''
-      display: block
-      width: 100%
-      height: 100%
-      position: absolute
-      z-index: -1
-      left: -100%
-      top: 0px
-      background-color: $color-emphasis
-      transition: left .5s
-      +md 
-        display: none
-    &:hover, &.active 
-      +md 
-        background-color: $color-emphasis
-      &::after
-        left: 0%
-  &__link--outer
-    padding: 4px 16px 
-    margin-left: 12px
-    display: block
-    color: darken($color-emphasis, 15%)
-    border: solid 2px darken($color-emphasis, 15%)
-    +md 
-      margin-left: 0
-      padding: 8px 12px
-      text-align: center
+	position: relative
+	&__toggle
+		display: block
+		position: relative
+		margin-top: 20px
+		z-index: 50
+		cursor: pointer
+		&__line
+			width: 30px
+			height: 3px
+			background-color: $color-primary
+			border-radius: 100px
+			display: block
+			margin-top: 7px
+			transition: all .5s
+		&.active
+			.nav__toggle__line:nth-child(1)
+				transform: translateY(10px) rotate(135deg)
+			.nav__toggle__line:nth-child(2)
+				opacity: 0
+				transform: translateX(-30px)
+			.nav__toggle__line:nth-child(3)
+				transform: translateY(-10px) rotate(-135deg)
+	&__menu
+		position: absolute
+		top: 35px
+		width: 100%
+		height: 0px
+		opacity: 0
+		overflow: hidden
+		transition: all 0.3s
+		z-index: 100
+		&.active
+			opacity: 1
+			height: 100vh
 
-  
-
-
+	&__link
+		display: block
+		padding: 12px
+		text-align: center 
+		color: $color-primary
+		transition: all .5s
+		&:hover, &.active 
+			color: $color-white
+			font-size: $font-size-base * 1.2
+			
+	&__overlay
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 0
+		background: rgba(0, 0, 0, 0.95)
+		transition: height .5s 
+		z-index: 5
+		&.active 
+			height: 100%

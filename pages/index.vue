@@ -13,7 +13,14 @@ import { ref, onMounted } from "vue";
 				{{ item.name }}
 				<img :src="item.path" alt="" />
 			</div> -->
-			<div class="">抽牌區塊</div>
+			<div class="drawcard">
+				<h2 class="drawcard__title">
+					集中精神，冥想問題<br />
+					準備好之後<br />
+					按下抽牌鍵<span>↓</span>
+				</h2>
+				<button type="button" class="drawcard__btn">抽牌</button>
+			</div>
 			<section class="section">
 				<p>抽牌前：</p>
 				<p>

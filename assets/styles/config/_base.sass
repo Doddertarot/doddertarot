@@ -21,9 +21,13 @@ body, html
 
 .h1, h1
 	font-size: $font-size-base * 2.25
+	margin-top: 2rem
+
 .h2, h2
 	font-size: $font-size-base * 1.75
 	margin-top: 2rem
+	+sm 
+		margin-top: 1rem
 
 .h3, h3
 	font-size: $font-size-base * 1.5
@@ -76,21 +80,45 @@ button
 	border: none
 
 .container 
-	max-width: 980px
+	max-width: 600px
 	margin: 0 auto
 	width: 100%
-	+xl 
-		padding: 0 20px
-	+md
-		padding: 0 15px
+	padding: 0 20px
+	+sm
+		padding: 0 30px
 
 .logo
 	width: 400px
 	max-width: 100%
-	margin: 60px auto 0
+	margin: 2rem auto 0
+	+sm 
+		max-width: 86%
 
 .section
 	margin-top: 2rem
+	+sm 
+		margin-top: 1rem
 	
-		
-
+.drawcard
+	padding: 20px 20px 45px
+	margin-top: 2rem
+	border: dashed 2px $color-primary
+	border-radius: 45px
+	text-align: center
+	+sm 
+		margin-top: 1rem
+	&__title
+		margin-top: 0
+		+sm
+			margin-top: 0
+	&__btn
+		background-color: $color-primary
+		color: $color-black
+		font-size: $font-size-base * 2
+		padding: 5px 28px
+		border-radius: 30px
+		margin-top: 1rem
+		transition: all .3s
+		cursor: pointer
+		&:hover
+			background-color: $color-white
