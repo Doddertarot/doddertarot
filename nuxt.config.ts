@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/doddertarot/' : '/',
-    buildAssetsDir: '/assets/',
+    buildAssetsDir: '/static/',
     head: {
       "viewport": "width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0",
       "title": "菟絲子塔羅占卜",
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     '@/assets/styles/main.sass',
   ],
   devtools: { enabled: true },
-  experimental: {
-    payloadExtraction: true
-  }
+  // experimental: {
+  //   payloadExtraction: true
+  // }
 })
