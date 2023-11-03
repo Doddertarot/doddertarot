@@ -1,22 +1,36 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import CardModal from "@/components/CardModal.vue";
 
-const cardData = ref([]);
+const cardData = ref([]); // All Data
+const tempSingleCard = ref({}); // Single Data
+const isModalOpen = ref(false); // Modal
+const isModalOpening = ref(false);
+let timeoutId = null;
+
 const { data: card } = await useFetch("/api/card");
 cardData.value = card.value.data;
-// console.log(cardData.value);
 
-// Modal
-const isModalOpen = ref(false);
 const closeModalHandle = () => {
 	isModalOpen.value = false;
+	tempSingleCard.value = {};
 };
 
-const func = () => {
-	const randomInt = Math.floor(Math.random() * 156) + 1;
-	console.log(randomInt);
-	isModalOpen.value = true;
+const openModalHandle = () => {
+	if (!isModalOpening.value) {
+		const randomInt = Math.floor(Math.random() * 156);
+		isModalOpening.value = true;
+		isModalOpen.value = true;
+		tempSingleCard.value = cardData.value[randomInt];
+
+		if (timeoutId) {
+			clearTimeout(timeoutId);
+		}
+
+		timeoutId = setTimeout(() => {
+			isModalOpening.value = false;
+		}, 600);
+	}
 };
 </script>
 
@@ -30,7 +44,14 @@ const func = () => {
 					準備好之後<br />
 					按下抽牌鍵<span>↓</span>
 				</h2>
-				<button type="button" class="drawcard__btn" @click="func">抽牌</button>
+				<button
+					type="button"
+					class="drawcard__btn"
+					:disabled="isModalOpening"
+					@click="openModalHandle"
+				>
+					抽牌
+				</button>
 			</div>
 			<div class="index__bottom">
 				<section class="section">
@@ -52,6 +73,7 @@ const func = () => {
 		</div>
 		<CardModal
 			:isModalOpen="isModalOpen"
+			:tempSingleCard="tempSingleCard"
 			:closeModalHandle="closeModalHandle"
 		/>
 	</div>

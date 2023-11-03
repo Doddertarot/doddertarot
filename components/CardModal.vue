@@ -4,25 +4,52 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
+	tempSingleCard: {
+		type: Object,
+		default() {
+			return {
+				cardName: "很抱歉發生錯誤，請稍候重整再試。",
+				type: "",
+				img: "/img/empty.jpg",
+			};
+		},
+	},
 	closeModalHandle: {
 		type: Function,
 		default: () => {},
 	},
 });
+
+const flipEffect = ref(false);
+
+const beforeEnter = () => {
+	flipEffect.value = false;
+};
+
+const afterEnter = () => {
+	flipEffect.value = true;
+};
 </script>
 
 <template>
-	<Transition name="modal">
+	<Transition
+		name="modal"
+		@before-enter="beforeEnter"
+		@after-enter="afterEnter"
+	>
 		<div v-if="props.isModalOpen" class="modal__mask">
 			<div class="container">
 				<div class="modal__main">
 					<span class="modal__close" @click="props.closeModalHandle">X</span>
 					<div class="modal__content">
-						<h3 class="modal__title">正位</h3>
-						<div class="modal__pic">
-							<img src="/img/ace_of_cup_upright.jpg" alt="" />
+						<h3 class="modal__title">{{ props.tempSingleCard.type }}</h3>
+						<div class="modal__pic" :class="{ flipY: flipEffect }">
+							<img
+								:src="props.tempSingleCard.img"
+								:alt="props.tempSingleCard.cardName"
+							/>
 						</div>
-						<h3 class="modal__title">高塔</h3>
+						<h3 class="modal__title">{{ props.tempSingleCard.cardName }}</h3>
 					</div>
 				</div>
 			</div>
