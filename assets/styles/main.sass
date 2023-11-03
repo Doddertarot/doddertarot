@@ -2,8 +2,81 @@
 @import "config/_variables"
 @import "config/_mixins"
 @import "config/_base"
-@import "components/_card"
 @import "layouts/_header"
 @import "layouts/_footer"
+@import "layouts/_modal"
+
+@keyframes zoomIn 
+	0% 
+		opacity: 0
+		-webkit-transform: scale3d(.3, .3, .3)
+		transform: scale3d(.3, .3, .3)
+	50% 
+		opacity: 1
+
+@keyframes arrowAni
+	0%
+		transform: translateY(3px)
+	50%
+		transform: translateY(-4px)
+	100% 
+		transform: translateY(3px)
+
+.logo
+	width: 400px
+	max-width: 100%
+	margin: 2rem auto 0
+	animation: zoomIn .8s ease-in-out forwards
+	+sm 
+		max-width: 86%
+
+.section
+	margin-top: 2rem
+	+sm 
+		margin-top: 1rem
+	
+.drawcard
+	padding: 20px 20px 45px
+	margin-top: 2rem
+	border: dashed 2px $color-primary
+	border-radius: 45px
+	text-align: center
+	+sm 
+		margin-top: 1rem
+	&__title
+		margin-top: 0
+		+sm
+			margin-top: 0
+	&__btn
+		background-color: $color-primary
+		color: $color-black
+		font-size: $font-size-base * 2
+		padding: 5px 28px
+		border-radius: 30px
+		margin-top: 1rem
+		transition: all .3s
+		cursor: pointer
+		&:hover
+			background-color: $color-white
+	&__arrow
+		display: inline-block
+		margin-left: 3px
+		animation-name: arrowAni
+		animation-duration: 1.5s
+		animation-iteration-count: infinite
 
 
+.index
+	&__bottom
+		position: relative
+		.section
+			position: relative
+			z-index: 2
+		&__logo
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			z-index: 1
+			width: 230px
+			margin: auto

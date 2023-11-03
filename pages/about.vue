@@ -1,7 +1,6 @@
 <script setup></script>
 
 <template>
-	<!-- 個人介紹 -->
 	<div class="about">
 		<div class="container">
 			<div class="logo">

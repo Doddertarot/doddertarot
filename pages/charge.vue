@@ -1,7 +1,6 @@
 <script setup></script>
 
 <template>
-	<!-- 占卜收費方式 -->
 	<div class="charge">
 		<div class="container">
 			<div class="logo">

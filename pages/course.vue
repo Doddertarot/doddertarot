@@ -1,7 +1,6 @@
 <script setup></script>
 
 <template>
-	<!-- 課程資訊 -->
 	<div class="course">
 		<div class="container">
 			<div class="logo">
