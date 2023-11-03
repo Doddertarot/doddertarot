@@ -1,4 +1,5 @@
 <script setup>
+const config = useRuntimeConfig();
 const props = defineProps({
 	isModalOpen: {
 		type: Boolean,
@@ -45,7 +46,7 @@ const afterEnter = () => {
 						<h3 class="modal__title">{{ props.tempSingleCard.type }}</h3>
 						<div class="modal__pic" :class="{ flipY: flipEffect }">
 							<img
-								:src="props.tempSingleCard.img"
+								:src="`${config.public.apiCardBase}${props.tempSingleCard.img}`"
 								:alt="props.tempSingleCard.cardName"
 							/>
 						</div>
