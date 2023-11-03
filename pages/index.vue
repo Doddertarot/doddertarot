@@ -42,7 +42,7 @@ const openModalHandle = () => {
 				<h2 class="drawcard__title">
 					集中精神，冥想問題<br />
 					準備好之後<br />
-					按下抽牌鍵<span>↓</span>
+					按下抽牌鍵<span class="drawcard__arrow">↓</span>
 				</h2>
 				<button
 					type="button"

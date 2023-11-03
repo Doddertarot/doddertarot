@@ -6,10 +6,27 @@
 @import "layouts/_footer"
 @import "layouts/_modal"
 
+@keyframes zoomIn 
+	0% 
+		opacity: 0
+		-webkit-transform: scale3d(.3, .3, .3)
+		transform: scale3d(.3, .3, .3)
+	50% 
+		opacity: 1
+
+@keyframes arrowAni
+	0%
+		transform: translateY(3px)
+	50%
+		transform: translateY(-4px)
+	100% 
+		transform: translateY(3px)
+
 .logo
 	width: 400px
 	max-width: 100%
 	margin: 2rem auto 0
+	animation: zoomIn .8s ease-in-out forwards
 	+sm 
 		max-width: 86%
 
@@ -41,6 +58,13 @@
 		cursor: pointer
 		&:hover
 			background-color: $color-white
+	&__arrow
+		display: inline-block
+		margin-left: 3px
+		animation-name: arrowAni
+		animation-duration: 1.5s
+		animation-iteration-count: infinite
+
 
 .index
 	&__bottom
