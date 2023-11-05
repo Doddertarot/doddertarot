@@ -6,7 +6,7 @@
 			<div class="logo">
 				<img src="/img/logo.jpg" alt="菟絲子塔羅占卜" />
 			</div>
-			<h2>菟絲子塔羅占卜.東澄老師</h2>
+			<h2 class="title-ani">菟絲子塔羅占卜.東澄老師</h2>
 			<section class="section">
 				<p>關於東澄老師：</p>
 				<p>
@@ -16,7 +16,7 @@
 			<section class="section">
 				<p>東澄老師建議：</p>
 				<p>
-					占卜只能幫助你做出選擇,絕不是左右你的選擇，決定權在你手上,參考占卜內容,做出不會讓自己後悔的決定，趨吉避凶才是占卜的真意。
+					占卜只能幫助你做出選擇,絕不是左右你的選擇，決定權在你手上，參考占卜內容，做出不會讓自己後悔的決定，趨吉避凶才是占卜的真意。
 				</p>
 			</section>
 			<section class="section">

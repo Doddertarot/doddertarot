@@ -18,6 +18,8 @@ const navMenuToggle = () => {
 					<span class="nav__toggle__line"></span>
 					<span class="nav__toggle__line"></span>
 					<span class="nav__toggle__line"></span>
+					<h3 class="nav__toggle__title">Dodder Tarot</h3>
+					<p class="nav__toggle__text">目錄</p>
 				</div>
 				<div
 					class="nav__menu"

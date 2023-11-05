@@ -7,6 +7,17 @@
 		margin-top: 20px
 		z-index: 50
 		cursor: pointer
+		&__title
+			position: absolute
+			left: 40px
+			top: -9px
+			+sm 
+				top: -6px
+		&__text
+			font-size: $font-size-base * .875
+			transform: translate(1px, 2px)
+			+sm 
+				transform: translate(2px, 2px)
 		&__line
 			width: 30px
 			height: 3px

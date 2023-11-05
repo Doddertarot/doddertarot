@@ -5,7 +5,10 @@
 		<div class="container">
 			<div class="footer__content">
 				<div class="footer__social">
-					<a href="" class="footer__social__link">
+					<a
+						href="http://line.me/ti/p/~0923131507"
+						class="footer__social__link"
+					>
 						<img src="/img/line-icon.svg" alt="SVG Image" />
 					</a>
 					<a

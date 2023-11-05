@@ -37,7 +37,7 @@ const openModalHandle = () => {
 <template>
 	<div class="index">
 		<div class="container">
-			<h1>菟絲子塔羅占卜</h1>
+			<h1 class="title-ani">菟絲子塔羅占卜</h1>
 			<div class="drawcard">
 				<h2 class="drawcard__title">
 					集中精神，冥想問題<br />

@@ -6,7 +6,7 @@
 			<div class="logo">
 				<img src="/img/logo.jpg" alt="菟絲子塔羅占卜" />
 			</div>
-			<h2>菟絲子塔羅占卜.東澄老師</h2>
+			<h2 class="title-ani">菟絲子塔羅占卜.東澄老師</h2>
 			<section class="section">
 				<p>塔羅教學課程：</p>
 				<ul>
