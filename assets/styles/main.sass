@@ -22,6 +22,20 @@
 	100% 
 		transform: translateY(3px)
 
+@keyframes drawcardBtnAni
+	0%
+		transform: translateY(2px)
+		filter: drop-shadow(rgb(255, 255, 255) 0px 0px 3px)
+		background-color: $color-primary
+	50%
+		transform: translateY(-3px)
+		filter: drop-shadow(rgb(255, 255, 255) 0px 0px 14px)
+		background-color: $color-white
+	100% 
+		transform: translateY(2px)
+		filter: drop-shadow(rgb(255, 255, 255) 0px 0px 3px)
+		background-color: $color-primary
+
 @keyframes bounceInLeft
 	from,
 	60%,
@@ -87,8 +101,12 @@
 		margin-top: 1rem
 		transition: all .3s
 		cursor: pointer
-		&:hover
-			background-color: $color-white
+		filter: drop-shadow(rgb(255, 255, 255) 0px 0px 5px)
+		animation-name: drawcardBtnAni
+		animation-duration: 2s
+		animation-iteration-count: infinite
+		// &:hover
+		// 	background-color: $color-white
 	&__arrow
 		display: inline-block
 		margin-left: 3px
