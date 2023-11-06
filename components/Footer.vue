@@ -7,6 +7,7 @@
 				<div class="footer__social">
 					<a
 						href="http://line.me/ti/p/~0923131507"
+						target="_blank"
 						class="footer__social__link"
 					>
 						<img src="/img/line-icon.svg" alt="SVG Image" />
